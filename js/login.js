@@ -24,7 +24,7 @@ form.addEventListener("submit", function (event) {
   const senha = senhaInput.value.trim();
 
   if (email === "" || senha === "") {
-    exibirAviso("Por favor, preencha todos os campos.");
+    exibirAviso("Por favor, preencha todos os campos vazios!");
     return;
   }
 

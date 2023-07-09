@@ -44,7 +44,7 @@ form.addEventListener("submit", function (event) {
   limparAvisos();
 
   if (email === "" || senha === "" || repitaSenha === "") {
-    exibirAviso("Por favor, preencha todos os campos.");
+    exibirAviso("Por favor, preencha todos os campos vazios!");
     return;
   }
 
@@ -52,12 +52,12 @@ form.addEventListener("submit", function (event) {
   const usuario = usuarios.find((usuario) => usuario.email === email);
 
   if (!usuario) {
-    exibirAviso("Email não encontrado.");
+    exibirAviso("Email não Encontrado!");
     return;
   }
 
   if (senha !== repitaSenha) {
-    exibirAviso("As senhas não coincidem.");
+    exibirAviso("As senhas não são iguais!");
     return;
   }
 

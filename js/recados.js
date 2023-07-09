@@ -93,7 +93,7 @@ function adicionarRecado() {
   var descricao = descricaoInput.value.trim();
 
   if (titulo === "" || descricao === "") {
-    alert("Por favor, preencha todos os campos!");
+    alert("Por favor, preencha todos os campos vazios!");
     return;
   }
 
@@ -165,7 +165,7 @@ function editarRecado(id, tituloAntigo, descricaoAntiga) {
 }
 
 function excluirRecado(id) {
-  if (confirm("Deseja excluir este recado?")) {
+  if (confirm("Tem certeza de que Deseja excluir este recado?")) {
     removerRecadoLocalStorage(id);
 
     var table = getRecadosTable();
