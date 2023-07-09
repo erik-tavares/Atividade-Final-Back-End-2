@@ -100,14 +100,14 @@
   text-align: center;
   font-size: 40px;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 80px;
+  margin: 90px;
 }
 
 .texto1 {
   text-align: center;
   font-size: 40px;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 70px;
+  margin: 95px;
 }
 
 .texto3 {
@@ -330,6 +330,7 @@ button:hover {
   background-color: #f77b7b;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
+  font-style: italic;
 }
 
 .botaoRedefinir:hover {
