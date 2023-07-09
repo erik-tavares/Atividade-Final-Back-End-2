@@ -67,7 +67,7 @@ form.addEventListener("submit", function (event) {
   exibirAviso("Senha alterada com sucesso!");
   setTimeout(function () {
     window.location.href = "login.html";
-  }, 3000);
+  }, 5000);
 });
 
 function exibirAviso(mensagem) {
