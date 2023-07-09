@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login">
+      <h1 class="texto1">Entrar no Sistema de Recados</h1>
+
+      <div class="formularioLogin">
+        <form action="/login" method="post">
+          <label class="letra" for="email">Email:</label>
+          <input
+            type="email"
+            class="inputEstilizar"
+            placeholder="Usuario@hotmail.com"
+            id="email"
+            name="email"
+          /> <br /><br />
+
+          <div class="password-container">
+            <label class="letra" for="senha">Senha:</label>
+            <input
+              type="password"
+              class="inputEstilizar"
+              placeholder="123456..."
+              id="senha"
+              name="senha"
+            />
+            <i class="fas fa-eye" id="toggle-password"></i>
+            <br /><br />
+          </div>
+
+          <p id="avisos" class="paragrafo-centralizado"></p>
+          <button class="botaoEntrar" type="submit">Login  <i class="fas fa-sign-in-alt"></i> </button>
+          <p class="conta"><a href="criarconta.html">Criar uma conta Agora! <i class="fas fa-arrow-right"></i>   </a></p>
+       <p> <a href="esqueceuaSenha.html"> Esqueci a Senha </a>  </p>
+        </form>
+      </div>
+    </div>
+    <script src="js/login.js"></script>
+  </body>
+</html>

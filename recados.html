@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Recados</title>
+  </head>
+  <body>
+    <header>
+      <button class="sairdaconta" onclick="sairConta()">Sair da Conta <i class="fas fa-door-closed"></i> </button>
+    </header>
+    <div class="recadosHtml">
+      <h1 class="recados">Meus Sistema de Recados</h1>
+      <form id="recadoForm">
+        <input
+          class="recadosinput"
+          placeholder="Título"
+          type="text"
+          id="tituloInput"
+        />
+
+        <input
+          class="recadosinput"
+          type="text"
+          placeholder="Descrição"
+          id="descricaoInput"
+        />
+        <button class="boatoRecados" type="submit">Salvar  <i class="fas fa-save"></i> </button>
+      </form>
+      <div class="tabelaRecados">
+        <table id="recadosTable">
+          <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Ação</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="js/recados.js"></script>
+  </body>
+</html>
