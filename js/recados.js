@@ -1,5 +1,5 @@
 function sairConta() {
-  var confirmarSaida = confirm("Tem certeza de que Deseja sair?");
+  var confirmarSaida = confirm("Tem certeza de que deseja sair?");
 
   if (confirmarSaida) {
     alert("Saindo do Sistema de Recados...");
@@ -32,12 +32,6 @@ sairContaBtn.addEventListener("mouseleave", function () {
   sairContaBtn.innerHTML = textoOriginal;
 });
 
-// var file = document.getElementById("inImg");
-// var img = document.getElementById("image");
-// file.addEventListener("change", (e) => {
-//   img.src = URL.createObjectURL(e.target.files[0]);
-// });
-
 function getRecadosTable() {
   return document.getElementById("recadosTable");
 }
@@ -55,6 +49,15 @@ function incrementarSequenciaID() {
 
 function adicionarRecadoTabela(id, titulo, descricao) {
   var table = getRecadosTable();
+
+  var rows = table.rows;
+  for (var i = 1; i < rows.length; i++) {
+    var row = rows[i];
+    var idCell = row.cells[0];
+    if (idCell.innerHTML === id) {
+      return;
+    }
+  }
 
   var row = table.insertRow(-1);
 
@@ -81,6 +84,10 @@ function adicionarRecadoTabela(id, titulo, descricao) {
     excluirRecado(id);
   });
   acaoCell.appendChild(excluirBtn);
+
+  alert("Recado adicionado com Sucesso");
+
+  adicionarRecadoLocalStorage(id, titulo, descricao);
 }
 
 function adicionarRecado() {
@@ -101,7 +108,6 @@ function adicionarRecado() {
   incrementarSequenciaID();
 
   adicionarRecadoTabela(id, titulo, descricao);
-  adicionarRecadoLocalStorage(id, titulo, descricao);
 
   tituloInput.value = "";
   descricaoInput.value = "";
@@ -109,8 +115,13 @@ function adicionarRecado() {
 
 function adicionarRecadoLocalStorage(id, titulo, descricao) {
   var recados = JSON.parse(localStorage.getItem("recados")) || [];
-  recados.push({ id: id, titulo: titulo, descricao: descricao });
-  localStorage.setItem("recados", JSON.stringify(recados));
+  var recadoExistente = recados.find(function (recado) {
+    return recado.id === id;
+  });
+  if (!recadoExistente) {
+    recados.push({ id: id, titulo: titulo, descricao: descricao });
+    localStorage.setItem("recados", JSON.stringify(recados));
+  }
 }
 
 function removerRecadoLocalStorage(id) {
@@ -165,7 +176,7 @@ function editarRecado(id, tituloAntigo, descricaoAntiga) {
 }
 
 function excluirRecado(id) {
-  if (confirm("Tem certeza de que Deseja excluir este recado?")) {
+  if (confirm("Tem certeza de que deseja excluir este recado?")) {
     removerRecadoLocalStorage(id);
 
     var table = getRecadosTable();
@@ -175,6 +186,9 @@ function excluirRecado(id) {
       var idCell = row.cells[0];
       if (idCell.innerHTML === id) {
         table.deleteRow(i);
+
+        alert("Recado excluído com sucesso!");
+
         break;
       }
     }
