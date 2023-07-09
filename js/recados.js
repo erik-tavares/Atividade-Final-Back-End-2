@@ -145,8 +145,17 @@ function editarRecadoLocalStorage(id, novoTitulo, novaDescricao) {
 
 function carregarRecados() {
   var recados = JSON.parse(localStorage.getItem("recados")) || [];
-  recados.forEach(function (recado) {
-    adicionarRecadoTabela(recado.id, recado.titulo, recado.descricao);
+
+  var table = getRecadosTable();
+  var rowCount = table.rows.length;
+
+  for (var i = 1; i < rowCount; i++) {
+    table.deleteRow(1);
+  }
+
+  recados.forEach(function (recado, index) {
+    var novoId = (index + 1).toString();
+    adicionarRecadoTabela(novoId, recado.titulo, recado.descricao);
   });
 }
 
@@ -195,6 +204,20 @@ function excluirRecado(id) {
   }
 }
 
+function excluirTodosRecados() {
+  if (confirm("Tem certeza de que deseja excluir todos os recados?")) {
+    localStorage.removeItem("recados");
+
+    var table = getRecadosTable();
+    while (table.rows.length > 1) {
+      table.deleteRow(1);
+    }
+
+    alert("Todos os recados foram excluídos com sucesso!");
+
+    window.location.reload();
+  }
+}
 window.addEventListener("load", function () {
   carregarRecados();
 });
