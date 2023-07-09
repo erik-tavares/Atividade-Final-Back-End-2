@@ -1,5 +1,5 @@
 function sairConta() {
-  var confirmarSaida = confirm("Tem certeza que deseja sair?");
+  var confirmarSaida = confirm("Tem certeza de que Deseja sair?");
 
   if (confirmarSaida) {
     alert("Saindo do Sistema de Recados...");
