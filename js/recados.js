@@ -92,7 +92,7 @@ function adicionarRecadoTabela(id, titulo, descricao) {
   });
   acaoCell.appendChild(excluirBtn);
 
-  alert("Recado adicionado com Sucesso");
+  // alert("Recado adicionado com Sucesso");
 
   adicionarRecadoLocalStorage(id, titulo, descricao);
 }
@@ -215,16 +215,20 @@ function excluirTodosRecados() {
   if (confirm("Tem certeza de que deseja excluir todos os recados?")) {
     localStorage.removeItem("recados");
 
-    var table = getRecadosTable();
-    while (table.rows.length > 1) {
-      table.deleteRow(1);
+    if (!localStorage.getItem("recados")) {
+      alert("Desculpe, não foi encontrado Nenhum Recado Salvo!");
+    } else {
+      var table = getRecadosTable();
+      while (table.rows.length > 1) {
+        table.deleteRow(1);
+      }
+
+      alert("Todos os recados foram excluídos com sucesso!");
+      window.location.reload();
     }
-
-    alert("Todos os recados foram excluídos com sucesso!");
-
-    window.location.reload();
   }
 }
+
 window.addEventListener("load", function () {
   carregarRecados();
 });
