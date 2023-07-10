@@ -18,6 +18,13 @@ function sairConta() {
   }
 }
 
+const uploadInput = document.getElementById("fotoInput");
+const uploadedImage = document.getElementById("uploaded-image");
+uploadInput.addEventListener("change", function (event) {
+  const file = event.target.files[0];
+  uploadedImage.src = URL.createObjectURL(file);
+});
+
 var sairContaBtn = document.querySelector(".sairdaconta");
 var textoOriginal = sairContaBtn.innerHTML;
 var iconePortaAberta =

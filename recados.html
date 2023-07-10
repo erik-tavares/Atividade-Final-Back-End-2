@@ -9,6 +9,11 @@
   </head>
   <body>
     <header>
+      <div class="centralizarAvatar">
+        <img id="uploaded-image" src="img/images.png" alt="Uploaded Image"> 
+        <input type="file" id="fotoInput" />
+        <label class="avatar" for="fotoInput"> <i class="fas fa-camera"></i> Adicione uma Foto! </label>
+      </div>
       <button class="sairdaconta" onclick="sairConta()">Sair da Conta <i class="fas fa-door-closed"></i> </button>
     </header>
     <div class="recadosHtml">
@@ -30,7 +35,7 @@
         <button class="boatoRecados" type="submit">Salvar  <i class="fas fa-save"></i> </button>
         <button class="boatoRecados" type="reset" onclick="excluirTodosRecados()">Excluir  <i class="fas fa-trash"></i>       </button>
       </form>
-      <div class="tabelaRecados">
+      <section class="tabelaRecados">
         <table id="recadosTable">
           <tr>
             <th>ID</th>
@@ -39,7 +44,7 @@
             <th>Ação</th>
           </tr>
         </table>
-      </div>
+      </section>
     </div>
     <script src="js/recados.js"></script>
   </body>

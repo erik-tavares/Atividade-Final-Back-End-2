@@ -10,7 +10,7 @@
   transform: translate(-50%, -50%);
   animation: box 1s ease none;
   background-color: whitesmoke;
-  box-shadow: 30px 30px 10px;
+  box-shadow: 30px 30px 30px;
 }
 
 @keyframes box {
@@ -40,7 +40,7 @@
   transform: translate(-50%, -50%);
   animation: box 1s ease none;
   background-color: white;
-  box-shadow: 30px 30px 10px;
+  box-shadow: 30px 30px 30px;
 }
 
 .inputEstilizar {
@@ -95,18 +95,18 @@
   font-size: 20px;
 }
 
-.texto2 {
-  text-align: center;
-  font-size: 35px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 100px;
-}
-
 .texto1 {
   text-align: center;
   font-size: 35px;
   font-family: Arial, Helvetica, sans-serif;
   margin: 95px;
+}
+
+.texto2 {
+  text-align: center;
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 100px;
 }
 
 .texto3 {
@@ -169,6 +169,30 @@ body {
   background-color: rgb(181, 133, 133);
 }
 
+input[type="file"] {
+  display: none;
+}
+
+.avatar {
+  cursor: pointer;
+  padding-top: 82px;
+  color: black;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.centralizarAvatar {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  border-radius: 50%;
+  max-width: 100px;
+}
+
 .recadosHtml {
   display: flex;
   justify-content: space-between;
@@ -208,7 +232,7 @@ input {
 }
 
 .tabelaRecados {
-  border: 3px solid black;
+  border: 5px solid black;
   padding: 10px;
   font-size: 35px;
   font-family: Arial, Helvetica, sans-serif;
@@ -226,7 +250,7 @@ table {
 table th,
 table td {
   padding: 20px;
-  border: 3px solid black;
+  border: 5px solid black;
 }
 
 .password-container {
